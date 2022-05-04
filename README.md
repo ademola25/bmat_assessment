@@ -3,7 +3,7 @@
 ## Required Dependencies
 
 
-**pip install -r requirements.txt**
+pip install -r requirements.txt
 
 
 ## Setting the database
@@ -11,13 +11,13 @@
 Create a Postgres database and copy my .env-example file and rename it with your db details in your .env file
 
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql',
-'NAME': os.getenv('DB_NAME'),
-'USER': os.getenv('DB_USER'),
-'PASSWORD': os.getenv('DB_PASSWORD'),
-'HOST': os.getenv('DB_HOST'),
-'PORT': os.getenv('DB_PORT', '5432'),
+  'default': {
+  'ENGINE': 'django.db.backends.postgresql',
+  'NAME': os.getenv('DB_NAME'),
+  'USER': os.getenv('DB_USER'),
+  'PASSWORD': os.getenv('DB_PASSWORD'),
+  'HOST': os.getenv('DB_HOST'),
+  'PORT': os.getenv('DB_PORT', '5432'),
 }
 }
 
@@ -34,10 +34,10 @@ python manage.py runserver
 Importing metadata from a CSV file
 ------------------------------------
 
-A custom django command was created to import metadata from a CSV file.
+A custom django command was created to import metadata from a CSV file. management/command/import_metadata.py
 
 
-python manage.py import_metadata <path-to-file>
+`python manage.py import_metadata <path-to-file>`
 
 
 
