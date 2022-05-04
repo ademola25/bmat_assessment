@@ -44,13 +44,11 @@ python manage.py import_metadata <path-to-file>
 **Matching and Reconciling**
 -----------------------------------
 
-The logic is in `view.py`.
-Two separate function for them both
-## matching and reconcile_data
-**load_work()** function then Load the data into database after making sure it passes matching and Reconcile Requirements
+The logic is in `view.py`.Two separate function for them both`matching` and `reconcile_data`. I then used
+`load_work()` function to Load the data into database after making sure it passes matching and Reconcile Requirements
   
   
-TO RUN TEST
+### TO RUN TEST
  Run python manage.py test
   
   
@@ -65,7 +63,7 @@ same title and contributors exist. Here i use the Q object to acheive the compar
 ## Reconciling
 we first iterate through the column and check if there is no
 previous value for each of them , if not then update the column with the new value
-I use getattri() function to check for value and use setattri() to update with new value
+I use `getattri()` function to check for value and use `setattri()` to update with new value
 
 Then we iterate thru contributors and then perform a merge
  of db contributor and metadata contributor with extend function
@@ -83,8 +81,8 @@ No it won't. Querying will take more much time with this current database size
 
 2. If not, what would you do to improve it?
 Optimization:
-A great idea for improving the loading speed of a massive CSV would be to use MULTI_PROCESSING, In the command above, you could split the one big CSV file into multiple smaller files (the best approach would be to try to use indexes of rows) and put each batch of work under a separate process.  and ofcourse there is downside to this as well, you will need more free CPUs.
-Also, writing raw sql optimized queries
+A great idea for improving the loading speed of a massive CSV would be to use `MULTI_PROCESSING`, In the command above, you could split the one big CSV file into multiple smaller files (the best approach would be to try to use indexes of rows) and put each batch of work under a separate process.  and ofcourse there is downside to this as well, you will need more free CPUs.
+Also, writing `raw sql` optimized queries
 
 
 
